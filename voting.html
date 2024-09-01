@@ -93,7 +93,7 @@
 <body>
     <form align="center" id="votingForm">
         <label><h2>Select The Candidate</h2></label><br><br>
-        <select id="partySelect" value="">
+        <select id="partySelect">
             <option value="BJP">BJP</option>
             <option value="INC">INC</option>
             <option value="AAP">AAP</option>
@@ -102,7 +102,7 @@
             <option value="CPI">CPI</option>
         </select><br><br><br><br>
         <button type="button" onclick="vote()">Vote</button><br><br><br><br>
-        <a href="result.html" onclick="showResults()">Show the result</a>
+        <a href="javascript:void(0);" onclick="showResults()">Show the result</a>
     </form>
 
     <div id="overlay"></div>
@@ -141,7 +141,7 @@
         function showResults() {
             let resultMessage = "Voting Results:\n";
             for (const [party, votes] of Object.entries(results)) {
-                resultMessage += ${party}: ${votes} votes\n;
+                resultMessage += `${party}: ${votes} votes\n`;
             }
             alert(resultMessage);
         }
